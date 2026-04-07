@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stay Positive</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    
+    body {
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: black;
+    }
+
+    
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      z-index: -3;
+    }
+
+    
+    .background::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background-image:
+        linear-gradient(rgba(0,255,255,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.15) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveGrid 8s linear infinite;
+    }
+
+    @keyframes moveGrid {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(-50px, -50px);
+      }
+    }
+
+    
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+      z-index: -2;
+    }
+
+    
+    .container {
+      padding: 50px 70px;
+      border-radius: 20px;
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px #00eaff, 0 0 30px #00eaff;
+      }
+      50% {
+        box-shadow: 0 0 30px #00eaff, 0 0 80px #00eaff;
+      }
+      100% {
+        box-shadow: 0 0 10px #00eaff, 0 0 30px #00eaff;
+      }
+    }
+
+    
+    .title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 70px;
+      letter-spacing: 4px;
+      color: white;
+
+      text-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #00eaff,
+        0 0 40px #00eaff;
+
+      margin-bottom: 15px;
+    }
+
+    
+    .title::after {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 4px;
+      margin: 10px auto;
+      background: linear-gradient(to right, #00eaff, #0077ff);
+      border-radius: 5px;
+    }
+
+    
+    .subtitle {
+      font-size: 18px;
+      color: #e0f7ff;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    
+    .author {
+      font-size: 14px;
+      color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1 class="title">Stay Positive</h1>
+    <p class="subtitle">"Everyday is a new beginning"</p>
+    <p class="author">– Jephte</p>
+  </div>
+
+</body>
+</html>
